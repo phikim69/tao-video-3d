@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tao Video 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                black: '#0a0a0a',
+                dark: '#121212',
+                green: '#16a34a', // green-600
+                lightGreen: '#4ade80', // green-400
+              }
+            },
+            animation: {
+              'glow': 'glow 2s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              glow: {
+                '0%': { boxShadow: '0 0 5px #16a34a' },
+                '100%': { boxShadow: '0 0 20px #4ade80' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #ffffff;
+        overflow-x: hidden; /* Prevent horizontal scroll during zoom */
+      }
+      
+      /* Custom Scrollbar - Slim, Glassy, Elegant */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.02); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(22, 163, 74, 0.3);
+        border-radius: 10px;
+        backdrop-filter: blur(4px);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(22, 163, 74, 0.6);
+      }
+
+      /* Utility for text gradient */
+      .text-gradient-brand {
+        background: linear-gradient(to right, #22c55e, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .bg-gradient-brand {
+        background: linear-gradient(135deg, #15803d 0%, #16a34a 60%, #dcfce7 100%);
+      }
+
+      .bg-glow-backdrop {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 80vh;
+        background: radial-gradient(circle, rgba(22, 163, 74, 0.15) 0%, rgba(0,0,0,0) 70%);
+        z-index: -1;
+        pointer-events: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "jszip": "https://aistudiocdn.com/jszip@^3.10.1",
+    "xlsx": "https://aistudiocdn.com/xlsx@^0.18.5",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="bg-glow-backdrop"></div>
+  </body>
+</html>
